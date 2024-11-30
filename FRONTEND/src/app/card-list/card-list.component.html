@@ -16,11 +16,10 @@
 
         <!-- Détails de la carte -->
         <div class="card-details">
-          <p>**** **** **** {{ card.cardNumber.toString().slice(-4) }}</p>
+          <p>{{ card.cardNumber | cardNumberFormatter }}</p>
           <p><strong>EXPIRE FIN</strong> {{ card.expiryMonth }}/{{ card.expiryYear }}</p>
-          <p><strong>CCV</strong> ***</p>
+          <p><strong>CCV</strong> {{ card.ccv | cardCcvFormatter }}</p>
         </div>
-
         <button (click)="deleteCard(card.cardNumber)">Supprimer</button>
       </div>
     </div>
